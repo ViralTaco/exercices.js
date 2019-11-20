@@ -8,6 +8,13 @@ function validate(elementEvent) {
   } 
 }
 
-document.getElementById('monform').addEventListener('submit', function () {
-  validate(event)
+
+//document.getElementById('monform').addEventListener('submit', function () {
+//  validate(event)
+//})
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('monform').addEventListener('submit', function () {
+    validate(event)
+  })
 })
