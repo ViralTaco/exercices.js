@@ -1,13 +1,18 @@
 function validate(elementEvent) {
-  var formElement = elementEvent.srcElement
-  var text = formElement.q.value
+  const alertSpan = document.getElementById('alert')
+  const formElement = elementEvent.srcElement
+  const text = formElement.q.value
   
-  var regexEmpty = /^\s*$/g
+  const regexEmpty = /^\s*$/g
+  const isAlpha = /^[a-zA-Z\s]+$/g
   
   if (regexEmpty.test(text)) {
     elementEvent.preventDefault() // don't run action on function call
-    document.getElementById('alert').innerHTML = "Invalid query"
-  } 
+    alertSpan.innerHTML = "Invalid query"
+  } else if (!isAlpha.test(text)) {
+    elementEvent.preventDefault()
+    alertSpan.innerHTML = "No text in input"
+  }
 }
 
 document.addEventListener('DOMContentLoaded', function () {
