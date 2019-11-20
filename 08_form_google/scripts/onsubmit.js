@@ -1,17 +1,14 @@
 function validate(elementEvent) {
-  var inputElement = elementEvent.srcElement
-  var text = inputElement.q.value
+  var formElement = elementEvent.srcElement
+  var text = formElement.q.value
   
-  if (!text) {
+  var regexEmpty = /^\s*$/g
+  
+  if (regexEmpty.test(text)) {
     elementEvent.preventDefault() // don't run action on function call
-    alert('Empty form')
+    document.getElementById('alert').innerHTML = "Invalid query"
   } 
 }
-
-
-//document.getElementById('monform').addEventListener('submit', function () {
-//  validate(event)
-//})
 
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('monform').addEventListener('submit', function () {
