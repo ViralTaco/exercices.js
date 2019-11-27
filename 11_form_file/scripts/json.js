@@ -12,12 +12,13 @@ function age(bdate) {
 
 function decorate(element, dict) {
   var text = '<tr><th>name</th><th>birthday</th><th>age</th></tr>'
-  for (var i = 0; i < dict.length; ++i) {
+  
+  for (row of dict) {
     text += '<tr>'
     
-    text += '<td>' + dict[i].name + '</td>'
-    text += '<td>' + dict[i].date + '</td>'
-    text += '<td>' + age(dict[i].date) + '</td>'
+    text += '<td>' + row.name + '</td>'
+    text += '<td>' + row.date + '</td>'
+    text += '<td>' + age(row.date) + '</td>'
     
     text += '</tr>'
   }
