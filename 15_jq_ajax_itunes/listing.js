@@ -60,7 +60,7 @@ function handleError(error, status, response) {
 }
 
 $(() => {
-   $('#search-form').submit(function search(event) {
+   $('#search-form').submit((event) => {
       event.preventDefault();
       const query = $('#term').val();
       
